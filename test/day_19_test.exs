@@ -19,10 +19,8 @@ defmodule Day19Test do
     assert result == 535
   end
   
-  # test "Part 2" do
-  #   result =
-  #     "input/day_19" |> File.read! |> Day19.solve_2
-  #     
-  #   IO.inspect(result)
-  # end
+  test "Part 2" do
+    result = "input/day_19" |> File.read! |> Day19.solve_2
+    assert result == 212
+  end
 end
