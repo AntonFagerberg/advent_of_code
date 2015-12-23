@@ -40,7 +40,7 @@ defmodule Day22 do
     {boss_hp, mana, armor, buffs}
   end
   
-  defp defend(part_2, agent, spells, boss_hp, boss_dmg, hp \\ 50, mana, armor, buffs, mana_spent) do
+  defp defend(part_2, agent, spells, boss_hp, boss_dmg, hp, mana, _armor, buffs, mana_spent) do
     mana_max = Agent.get(agent, fn i -> i end)
     {boss_hp, mana, armor, buffs} = buff(boss_hp, mana, buffs)  
     
@@ -60,7 +60,7 @@ defmodule Day22 do
     end
   end
   
-  defp attack(part_2, agent, spells, boss_hp, boss_dmg, hp \\ 50, mana \\ 500, armor \\ 0, buffs \\ [], mana_spent \\ 0) do
+  defp attack(part_2, agent, spells, boss_hp, boss_dmg, hp, mana \\ 500, armor \\ 0, buffs \\ [], mana_spent \\ 0) do
     mana_max = Agent.get(agent, fn i -> i end)
     
     if hp <= 0 || (mana_max != -1 && mana_spent >= mana_max) do

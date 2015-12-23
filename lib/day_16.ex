@@ -14,7 +14,7 @@ defmodule Day16 do
     input
     |> String.split("\n")
     |> Enum.map(&(Regex.replace(~r/[^Sa-z0-9 ]/, &1, "")) |> String.split(" "))
-    |> Enum.filter(fn ["Sue", nr | tail] ->
+    |> Enum.filter(fn ["Sue", _nr | tail] ->
       tail
       |> Enum.chunk(2)
       |> Enum.map(list_to_tuple)
@@ -40,7 +40,7 @@ defmodule Day16 do
     input
     |> String.split("\n")
     |> Enum.map(&(Regex.replace(~r/[^Sa-z0-9 ]/, &1, "")) |> String.split(" "))
-    |> Enum.filter(fn ["Sue", nr | tail] ->
+    |> Enum.filter(fn ["Sue", _nr | tail] ->
       tail
       |> Enum.chunk(2)
       |> Enum.map(list_to_tuple)

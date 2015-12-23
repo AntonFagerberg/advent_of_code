@@ -2,16 +2,15 @@ defmodule Day19 do
   def solve_1(input) do
     [replacements, data] = input |> String.split("\n\n")
     
-    replacements = 
-      replacements
-      |> String.split("\n")
-      |> Enum.map(&(String.split(&1, " => ")))
-      |> Enum.map(fn [key, value] -> {key, value} end)
-      |> transform(data)
-      |> Enum.count
+    replacements
+    |> String.split("\n")
+    |> Enum.map(&(String.split(&1, " => ")))
+    |> Enum.map(fn [key, value] -> {key, value} end)
+    |> transform(data)
+    |> Enum.count
   end
   
-  defp transform(replacements, ""), do: []
+  defp transform(_replacements, ""), do: []
   
   defp transform(replacements, data) do
     transformed = 

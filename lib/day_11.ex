@@ -44,6 +44,6 @@ defmodule Day11 do
     d = div(i, ?z - ?a + 1)
     r = rem(i, ?z - ?a + 1)
 
-    char_list = if (d > 0), do: int_to_char_list(d - 1) ++ [r + ?a], else: [r + ?a]
+    if (d > 0), do: int_to_char_list(d - 1) ++ [r + ?a], else: [r + ?a]
   end
 end
