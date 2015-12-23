@@ -15,11 +15,25 @@ defmodule Day20Test do
   
   @tag timeout: :infinity
   test "Part 1" do
-    assert Day20.solve_1(33100000) == 776160
+    result = 
+      "input/day_20"
+      |> File.read!
+      |> Integer.parse
+      |> elem(0)
+      |> Day20.solve_1
+    
+    assert result == 776160
   end
   
   @tag timeout: :infinity
   test "Part 2" do
-    assert Day20.solve_2(33100000) == 786240
+    result = 
+      "input/day_20"
+      |> File.read!
+      |> Integer.parse
+      |> elem(0)
+      |> Day20.solve_2
+      
+    assert result == 786240
   end
 end
