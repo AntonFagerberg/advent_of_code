@@ -51,8 +51,10 @@ defmodule Day11Test do
     assert Day11.solve("hxbxwxba") == "hxbxxyzz"
   end
   
+  @tag timeout: :infinity
   test "Part 2" do
     old_index = "hxbxwxba" |> Day11.solve |> Day11.string_to_int
     result = 1 + old_index |> Day11.int_to_string |> Day11.solve
+    assert result == "hxcaabcc"
   end
 end
